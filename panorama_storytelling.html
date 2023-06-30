@@ -196,11 +196,11 @@
       topboxInfospot = new PANOLENS.Infospot();
       endingInfospot = new PANOLENS.Infospot( 10e-7 );  // Make it not visible
 
-      meterInfospot.position.set( 4610.04, 1280.07, 1431.29 );
-      valveInfospot.position.set( 4637.61, -798.12, -1671.24 );
+      meterInfospot.position.set( 1250.00, 2000.00, 5000.00 );
+      valveInfospot.position.set( 1250.00, -850.12, 5000.00 );
       seatInfospot.position.set( 1934.61, -2611.69, -3792.91 );
       topboxInfospot.position.set( -3348.82, 3705.92, 45.54 );
-      endingInfospot.position.set( -3461.4, -3592.37, -241.38 );
+      endingInfospot.position.set( 0, 0, 5000 );
 
       meterInfospot.addHoverText( 'Speedometer', 50 );
       valveInfospot.addHoverText( 'Valve', 50 );
@@ -215,7 +215,7 @@
       panorama.add( meterInfospot, valveInfospot, seatInfospot, topboxInfospot, endingInfospot );
 
       // Viewer
-      viewer = new PANOLENS.Viewer( { controlBar: false, initialLookAt: new THREE.Vector3( 0, 0, 5000 ) } );
+      viewer = new PANOLENS.Viewer( { controlBar: true, initialLookAt: new THREE.Vector3( -800000, 0, 5000 ) } );
       viewer.OrbitControls.enabled = false;
       viewer.add( panorama );
 
