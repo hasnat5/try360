@@ -87,7 +87,7 @@
 
       var paragraphs = {
 
-        welcome: [ 'Panolens Presents', 'A Journey to a <strong>Train</strong>', 'Here we go' ],
+        welcome: [ 'Welcome', 'A Journey to a <strong>Train</strong>', 'Here we go' ],
         meter: [ 'One of the common meter that you can see on a train', 'it is not specially eye-catching but it just can get your attention', 'it indicates how fast the train is currently going', 'Let us continue' ],
         valve: [ 'A Valve', 'solid looking and quite decent color', 'here shows the evidence that time would leaves marks on everything', 'same thing applies to our face...' ],
         seat: [ 'Alright. Here we have a seat. The green pad looks quite comfortable', 'when you are on a train', 'OK. Move on to next one' ],
@@ -208,14 +208,14 @@
       topboxInfospot.addHoverText( 'Box', 50 );
 
       // Panorama
-      panorama = new PANOLENS.ImagePanorama( 'asset/textures/equirectangular/Virtuwed.jpg' );
+      panorama = new PANOLENS.ImagePanorama( 'asset/textures/equirectangular/koridor.jpg' );
       panorama.addEventListener( 'progress', onProgress );
       panorama.addEventListener( 'load', onLoad );
       panorama.addEventListener( 'enter', onEnter );
       panorama.add( meterInfospot, valveInfospot, seatInfospot, topboxInfospot, endingInfospot );
 
       // Viewer
-      viewer = new PANOLENS.Viewer( { controlBar: false, initialLookAt: new THREE.Vector3( 0, 0, 5000 ) } );
+      viewer = new PANOLENS.Viewer( { controlBar: false, initialLookAt: new THREE.Vector3( 5000, 0, 0 ) } );
       viewer.OrbitControls.enabled = false;
       viewer.add( panorama );
 
@@ -223,3 +223,19 @@
 
   </body>
 </html>
+
+
+<!--
+Kalau dari flow resepsi virtualnya kan:
+1. Welcome Screen untuk tamu (sambutan), ini yg disebut resepsionis [VIEW: Welcome Screen Dinamis yg ada animasi fade in nya)
+2. Profil Mempelai & Gallery, ini jadi satu bagian. Jd di dinding itu foto2nya, trs pas di klik juga ada text profil mempelainya disitu [VIEW: Lorong yang ada gallerynya]
+3. Pelaminan (Ini yg tombol video call, live streaming) [VIEW: Pelaminan yang ada bunga2]
+4. Kasih Hadiah Digital [VIEW: Tengah tapi menghadap KIRI]
+5. Souvenir [VIEW: Tengah tapi menghadap KANAN]
+6. Exit / Ulangi dr Profil mempleai & Gallery
+
+
+
+Jd urutannya kl dari posisi nya tuh:
+Lorong -> Depan Pelaminan -> Tengah
+ -->
